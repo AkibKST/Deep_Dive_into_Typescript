@@ -1,4 +1,4 @@
-# Explore into this repo => [fileLocation] Covered Topics
+# Explore into this repo => [ file Location in src ] Covered Topics
 
 ### [1.4] Mastering Basic Data Types: TypeScript helps you manage different types of data. You'll learn about numbers, strings, Booleans, and other data types that make your code more organized.
 
