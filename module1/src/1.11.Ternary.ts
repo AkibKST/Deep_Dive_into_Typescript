@@ -40,6 +40,7 @@
     },
   };
 
+  //nullish coalescing ??
   const permanentAddress =
     user?.address?.permanentAddress ?? "No Permanent Address";
   console.log({ permanentAddress });
