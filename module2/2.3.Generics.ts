@@ -1,6 +1,8 @@
 {
   // generic type
 
+  //Generic Array
+
   type GenericArray<T> = Array<T>;
 
   // const rollNumbers: number[] = [3, 6, 8];
@@ -17,6 +19,7 @@
     age: number;
   }
 
+  //Generic Array of Object
   const user: GenericArray<User> = [
     {
       name: "Mezba",
@@ -32,7 +35,7 @@
 
   add(30, 20);
 
-  //generic tuple
+  //Generic tuple
 
   type GenericTuple<X, Y> = [X, Y];
 
