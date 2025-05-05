@@ -110,5 +110,5 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
-  "include": ["module1/src/**/*", "module2/**/*"]
+  "include": ["module1/src/**/*", "module2/**/*", "module3/**/*"]
 }
