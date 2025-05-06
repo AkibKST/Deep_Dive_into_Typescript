@@ -68,4 +68,53 @@
 
             TypeScript comes with built-in helpers (utility types) that offer common functionalities. We'll explore these helpers to make your code shorter and easier to maintain.
 
-By conquering these topics, you'll be well on your way to becoming a TypeScript whiz and crafting superior web applications! 💥
+### module3
+
+        ### Introduction of Object Oriented Programming
+
+        ### We will introduce you to object oriented programming. You'll learn what OOP is and how OOP principles help structure and maintain complex codebases.
+
+    ### [3.1] Class and object
+
+            Classes serve as blueprints for creating objects, which are instances that encapsulate both state and behavior. You'll learn how to define classes with properties and methods, create objects from them, and understand why this pattern is crucial for building scalable and maintainable applications.
+
+     ### [3.2] Inheritance in OOP
+
+             Continuing our exploration of Object-Oriented Programming, we will let talk about inheritance, one of the most powerful tools for code reuse. Inheritance allows a class to inherit properties and methods from another class, creating a parent-child relationship.
+
+     ### [3.3] Type guard using typeof & in
+
+             When working with dynamic types, it's crucial to ensure that you're dealing with the expected type. TypeScript offers type guards to help with this. In this video, you'll explore how to use the typeof operator to check the type of a variable at runtime, providing a safe way to implement conditional logic based on variable types.
+
+     ### [3.4] Type guard using instance of
+
+             Building on your knowledge of type guards, this video introduces instanceof, a powerful operator that allows you to check whether an object is an instance of a specific class. This is particularly useful in OOP, where objects might belong to different classes in an inheritance hierarchy.
+
+     ### [3.5] Access modifiers
+
+             Access modifiers are a key concept in Object-Oriented Programming, allowing you to control the visibility of class properties and methods. In this video, you'll learn about the different access modifiers in TypeScript
+
+      ### [3.6] Getter and setter
+
+             Take control of how your class properties are accessed and modified! You'll learn how to define getters and setters in TypeScript and explore their benefits
+
+       ### [3.7] Statics in OOP
+
+             Static properties and methods belong to the class itself, not to individual instances. We'll explore the concept of static members in TypeScript, showing you how to declare and use them.
+
+       ### [3.8]Polymorphism
+
+             Polymorphism is a fundamental concept in Object-Oriented Programming that allows different classes to be treated as if they are the same through a common interface or base class. In this video, you'll learn how to implement polymorphism in TypeScript.
+
+      ### [3.9]Abstraction in OOP
+
+            Abstraction allows you to hide complex implementation details behind a simple interface, providing a cleaner and more focused interaction with code. In this video, you'll learn how to use abstract classes and interfaces in TypeScript to create high-level blueprints.
+
+     ### [3.10]Encapsulation in OOP
+
+           Encapsulation is the practice of restricting access to certain parts of a class, ensuring that internal details remain hidden from external code. We will delve into encapsulation in TypeScript, demonstrating how to use access modifiers, private properties, and other techniques to safeguard your code's internal state.
+
+        With this knowledge, you can confidently build complex applications that are both maintainable and resilient. Keep practicing and experimenting with these concepts. The more you apply them, the more intuitive they will become!
+
+        By conquering these topics, you'll be well on your way to becoming a TypeScript whiz and crafting superior web applications! 💥
+
