@@ -145,3 +145,82 @@ Create:
 A type that is a union of Book and Magazine.
 A type that is an intersection of Book and Magazine.
 */
+
+//Book interface
+interface Book {
+  title: string;
+  author: string;
+  pages: number;
+  isbn: string;
+  publisher?: string;
+}
+
+//Magazine interface
+interface Magazine {
+  title: string;
+  issue: number;
+  publicationDate: Date;
+  publisher?: string;
+}
+
+// Create a union type (can be either Book or Magazine)
+type Publication = Book | Magazine;
+
+// Create an intersection type (must have properties of both Book and Magazine)
+// Note: This would only make sense for objects that are both books and magazines
+type BookMagazineCombo = Book & Magazine;
+
+// Example usage:
+
+// A publication that is a Book
+const myBook: Publication = {
+  title: "TypeScript Deep Dive",
+  author: "Basarat Ali Syed",
+  pages: 200,
+  isbn: "1234567890",
+};
+
+// A publication that is a Magazine
+const myMagazine: Publication = {
+  title: "Tech Today",
+  issue: 42,
+  publicationDate: new Date("2023-05-01"),
+};
+
+// An object that is both Book and Magazine
+//(unlikely in real world, but demonstrates the intersection)
+const rareCombo: BookMagazineCombo = {
+  title: "Hybrid Publication",
+  author: "Jane Doe",
+  pages: 100,
+  isbn: "0987654321",
+  issue: 1,
+  publicationDate: new Date("2023-01-01"),
+};
+
+/**
+ * Task 5: Function Type
+Objective: Write a function that reverses a string.
+
+Instructions:
+
+Write a function reverseString that:
+Takes a single string argument.
+Returns the string in reverse order.
+Example:
+Input: "hello"
+Output: "olleh"
+*/
+
+const reverseString = (str: string) => {
+  return str.split("").reverse().join("");
+};
+
+//str.split("")
+reverseString("hello"); // ["h", "e", "l", "l", "o"]
+
+//str.split("").reverse()
+//console.log(reverseString("hello")); ["o", "l", "l", "e", "h"]
+
+//str.split("").reverse().join("")
+//console.log(reverseString("hello")); // "olleh"
