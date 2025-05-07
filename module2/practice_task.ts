@@ -224,3 +224,39 @@ reverseString("hello"); // ["h", "e", "l", "l", "o"]
 
 //str.split("").reverse().join("")
 //console.log(reverseString("hello")); // "olleh"
+
+//=================================
+
+/**
+ * Task 6: Spread and Rest Operators, Destructuring
+Objective: Write a function that uses the rest operator for variable-length arguments.
+
+Instructions:
+
+Create a function that takes multiple numeric arguments (using the rest operator) and returns the sum of all arguments.
+
+*/
+// Using the rest operator to accept multiple arguments
+// The function takes a variable number of arguments and returns their sum
+const sumOfNumber = (...number: number[]): number => {
+  return number.reduce((total, numb) => total + numb, 0); // 0 is the initial value of total
+};
+
+const numOfArray = [1, 7, 8, 2, 3, 5];
+
+// Using the spread operator to pass the array elements as individual arguments
+const sum = sumOfNumber(...numOfArray);
+console.log(sum);
+//=================================
+
+/**
+ *Task 7: Type Assertion and Narrowing
+Objective: Write a function that behaves differently based on the input type.
+
+Instructions:
+
+Create a function that accepts a parameter of type string | number.
+The function should:
+Return the length if the input is a string.
+Return the square if the input is a number.
+ */
