@@ -398,3 +398,123 @@ Write a function processData(data: unknown) that:
 Checks if data is a string and returns the uppercase version.
 If data is a number, returns the square of it.
 */
+
+const processData = (data: unknown): string | number => {
+  if (typeof data === "string") {
+    return data.toUpperCase(); // Convert string to uppercase
+  } else if (typeof data === "number") {
+    return data * data; // Return the square of the number
+  } else {
+    return "Unsupported data type! "; // Handle other types
+  }
+};
+
+// Example usage
+const stringData: unknown = "hello";
+const numberData: unknown = 5;
+const booleanData: unknown = true;
+const arrayData: unknown = [1, 2, 3];
+const objectData: unknown = { name: "John" };
+
+// console.log(processData(arrayData));
+
+//==================================
+
+/**
+ * Task 12: Never Type
+Objective: Use the never type for functions that don’t return.
+
+Instructions:
+
+Write a function handleError that:
+Accepts a message: string.
+Throws an error with the given message.
+Use the never return type to indicate that this function never returns.
+*/
+
+const handleError = (message: string): never => {
+  throw new Error(message); // Throw an error with the given message
+};
+
+// Example usage:
+const processUserInput = (input: string) => {
+  if (input.trim() === "") {
+    handleError("Input cannot be empty");
+  }
+  //if input is not empty
+  return `input: ${input}`;
+};
+
+// console.log(processUserInput("Hello"));
+// console.log(handleError("Not Found")); // This will throw an error and stop execution
+//==================================
+
+/**
+ * Task 13: Generics with Functions and Interfaces
+Objective: Use generics to handle different types.
+
+Instructions:
+
+Create a generic function that:
+Accepts an array of any type.
+Returns a new array with duplicate values removed.
+*/
+
+const removeDuplicateData = <T>(array: T[]): T[] => {
+  return [...new Set(array)]; // Using Set to remove duplicates and converting it back to an array
+};
+
+// Example usage:
+const numberArray = [1, 2, 3, 4, 5, 1, 2, 3];
+const stringArray = ["apple", "banana", "apple", "orange"];
+const mixedArray = [1, "apple", 2, "banana", 1, "apple"];
+const booleanArray = [true, false, true, false, true];
+
+// console.log(removeDuplicateData(booleanArray));
+//===================================
+
+/**
+ * Task 14: Asynchronous TypeScript and Type Aliases
+Objective: Simulate an asynchronous operation with TypeScript.
+
+Instructions:
+
+Write an asynchronous function that:
+Simulates fetching user data (containing name and age).
+Returns the data after a short delay.
+
+*/
+
+// Define type alias for User data
+type UserData = {
+  name: string;
+  age: number;
+};
+
+// Simulate fetching user data asynchronously
+async function fetchUserData(): Promise<UserData> {
+  // Simulate network delay with setTimeout
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  // Return mock user data
+  return {
+    name: "John Doe",
+    age: 30,
+  };
+}
+
+// Example usage with proper error handling
+async function displayUserData() {
+  try {
+    console.log("Fetching user data...");
+    const userData = await fetchUserData();
+    console.log(`User Name: ${userData.name}`);
+    console.log(`User Age: ${userData.age}`);
+  } catch (error) {
+    console.error("Failed to fetch user data:", error);
+  }
+}
+
+// Execute the example
+// displayUserData();
+//===================================
