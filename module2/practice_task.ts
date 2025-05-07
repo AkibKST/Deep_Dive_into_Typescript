@@ -246,7 +246,7 @@ const numOfArray = [1, 7, 8, 2, 3, 5];
 
 // Using the spread operator to pass the array elements as individual arguments
 const sum = sumOfNumber(...numOfArray);
-console.log(sum);
+// console.log(sum);
 //=================================
 
 /**
@@ -260,3 +260,141 @@ The function should:
 Return the length if the input is a string.
 Return the square if the input is a number.
  */
+
+const findInputType = (input: string | number): number => {
+  if (typeof input === "string") {
+    return input.length;
+  } else {
+    return input * input;
+  }
+};
+
+// Example usage:
+const stringInput = "TypeScript";
+const numberInput = 12;
+
+// console.log(findInputType(stringInput)); // Output: 18 (length of the string)
+// console.log(findInputType(numberInput)); // Output: 25 (square of the number)
+
+//=================================
+
+/**
+ *
+ *Task 8: Intersection Types
+Objective: Practice using intersection types.
+
+Instructions:
+
+Create a type AdminUser that is an intersection of:
+User with properties name and email
+Admin with property adminLevel
+Write a function describeAdmin(user: AdminUser): string that returns a description of the admin user.
+ */
+{
+  //
+  interface User {
+    name: string;
+    email: string;
+  }
+
+  interface Admin {
+    adminLevel: number;
+  }
+
+  // Intersection type
+  type AdminUser = User & Admin;
+
+  // Function to describe the admin user
+  const describeAdmin = (user: AdminUser): string => {
+    return `Admin Name: ${user.name}, Email: ${user.email}, Admin Level: ${user.adminLevel}`;
+  };
+
+  // Example usage
+  const adminUser: AdminUser = {
+    name: "Alice",
+    email: "admin@gmail.com",
+    adminLevel: 1,
+  };
+
+  // console.log(describeAdmin(adminUser));
+  //
+}
+
+/**
+ * Task 9: Optional Chaining
+Objective: Use optional chaining with nested objects.
+
+Instructions:
+
+Write a function getEmployeeCity(employee) that safely retrieves the city of an employee from a nested object using optional chaining.
+ * */
+{
+  //
+
+  interface Employee {
+    name: string;
+    address?: {
+      city?: string;
+      state?: string;
+    };
+  }
+
+  const getEmployeeCity = (employee: Employee): string | undefined => {
+    return employee.address?.city; // Using optional chaining to safely access the city property
+  };
+
+  // Example usage
+  const employee1: Employee = {
+    name: "John",
+    address: {
+      city: "New York",
+      state: "NY",
+    },
+  };
+
+  const employee2: Employee = {
+    name: "Jane",
+  };
+
+  // console.log(getEmployeeCity(employee1)); // Output: "New York"
+  // console.log(getEmployeeCity(employee2)); // Output: undefined (no address property)
+  //
+}
+
+/**
+ * Task 10: Nullish Coalescing
+Objective: Handle null and undefined values using nullish coalescing.
+
+Instructions:
+
+Write a function getDisplayName(name: string | null | undefined): string that returns "Anonymous" if name is null or undefined.
+*/
+
+{
+  //
+  const getDisplayName = (name: string | null | undefined): string => {
+    return name ?? "Anonymous"; // Using nullish coalescing to provide a default value
+  };
+
+  // Example usage
+  const name1: string | null = "Alice";
+  const name2: string | null = null;
+  const name3: string | null | undefined = undefined;
+
+  // console.log(getDisplayName(name1)); // Output: "Alice"
+  // console.log(getDisplayName(name2)); // Output: "Anonymous"
+  // console.log(getDisplayName(name3)); // Output: "Anonymous"
+
+  //
+}
+
+/**
+ * Task 11: Unknown Type
+Objective: Handle different types with the unknown type.
+
+Instructions:
+
+Write a function processData(data: unknown) that:
+Checks if data is a string and returns the uppercase version.
+If data is a number, returns the square of it.
+*/
