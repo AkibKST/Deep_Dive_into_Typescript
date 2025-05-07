@@ -518,3 +518,66 @@ async function displayUserData() {
 // Execute the example
 // displayUserData();
 //===================================
+
+/**
+ * Task 15: Type Guards
+Objective: Create custom type guards for more accurate type checking.
+
+Instructions:
+
+Write a function isString(value: unknown): value is string that checks if a value is a string.
+Use this in another function printUpperCase(value: unknown): void that prints the value in uppercase if it’s a string.
+ * */
+
+const isString = (input: unknown): input is string => {
+  return typeof input === "string"; // Check if the input is a string
+};
+
+const printUpperCase = (input: unknown): void => {
+  if (isString(input)) {
+    console.log(input.toUpperCase()); // Print the string in uppercase
+  } else {
+    console.log("Not a string!"); // Handle non-string input
+  }
+};
+
+// Example usage
+// printUpperCase("akib welcome to your income life");
+//===========================
+
+/**
+ * 
+ * Task 16: Utility Types and Keyof Constraints
+Objective: Access object properties dynamically using keyof.
+
+Instructions:
+
+Create a function that:
+Takes an object and a key.
+Returns the property value from the object based on the provided key.
+Use keyof to constrain the key to valid properties of the object.
+*/
+
+type PersonInfo = {
+  name: string;
+  age: number;
+  email: string;
+};
+
+const getPropertyValue = <T, K extends keyof T>(obj: T, key: K): T[K] => {
+  return obj[key]; // Access the property value using the key
+};
+
+// Example usage
+const person: PersonInfo = {
+  name: "John Doe",
+  age: 30,
+  email: "person@gmail.com",
+};
+
+// console.log(getPropertyValue(person, "name"));
+
+//=========================
+
+//                       HAPPY CODING
+//===================================
